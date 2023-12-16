@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,7 +7,10 @@
     <title>Mi Portafolio</title>
     <link rel="shortcut icon" href="assets//logo1.jpg" type="image/x-icon">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="formulario.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
+    <script src="https://kit.fontawesome.com/2239bf391a.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <nav id="desktop-nav">
@@ -18,7 +21,14 @@
           <li><a href="#experience">Perfil</a></li>
           <li><a href="#projects">Proyectos</a></li>
           <li><a href="#contact">Contacto</a></li>
+          <!-- Agrega el botón de modo oscuro con el icono -->
+          <li>
+            <button id="dark-mode-toggle" onclick="toggleDarkMode()">
+              <i class="dark-mode-icon fas fa-moon"></i>
+            </button>
+          </li>
         </ul>
+        
       </div>
     </nav>
     <nav id="hamburger-nav">
@@ -34,6 +44,11 @@
           <li><a href="#experience" onclick="toggleMenu()">Experiencia</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Proyectos</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contacto</a></li>
+          <li>
+            <button id="dark-mode-toggle" onclick="toggleDarkMode()">
+              <i class="dark-mode-icon fas fa-moon"></i>
+            </button>
+          </li>
         </div>
       </div>
     </nav>
@@ -48,7 +63,7 @@
         <div class="btn-container">
           <button
             class="btn btn-color-2"
-            onclick="window.open('./assets/resume-example.pdf')"
+            onclick="window.open('./assets/CV.pdf')"
           >
             Descargar CV
           </button>
@@ -165,6 +180,17 @@
                   <p>Intermedio</p>
                 </div>
               </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Vue.js</h3>
+                  <p>Basico</p>
+                </div>
+              </article>
 
             </div>
           </div>
@@ -178,18 +204,7 @@
                   class="icon"
                 />
                 <div>
-                  <h3>PostgreSQL</h3>
-                  <p>Basico</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node JS</h3>
+                  <h3>MySQL</h3>
                   <p>Basico</p>
                 </div>
               </article>
@@ -201,6 +216,28 @@
                 />
                 <div>
                   <h3>Git</h3>
+                  <p>Basico</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Python</h3>
+                  <p>Basico</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Django</h3>
                   <p>Basico</p>
                 </div>
               </article>
@@ -247,22 +284,22 @@
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project-2.png"
+                src="../assets/bemar.png"
                 alt="Project 2"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Proyecto Dos</h2>
+            <h2 class="experience-sub-title project-title">Api - Bemarking</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
+                onclick="location.href='https://github.com/FerreiroNicolas/API-TP2'"
               >
                 Github
               </button>
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
+                onclick="location.href='http://nicolasferreiro1.pythonanywhere.com'"
               >
                 Live Demo
               </button>
@@ -301,28 +338,55 @@
         onclick="location.href='./#contact'"
       />
     </section>
-    <section id="contact">
-      <p class="section__text__p1">Ponerse en contacto</p>
-      <h1 class="title">Contáctame</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">nferreiro@agro.uba.ar</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/nicol%C3%A1s-ferreiro-b3703a293/">LinkedIn</a></p>
-        </div>
+
+    <section>
+      <div class="main-container">
+          <section id="contact">
+              <p class="section__text__p1">Ponerse en contacto</p>
+              <h1 class="title">Contáctame</h1>
+              <div class="contact-info-upper-container">
+                  <div class="contact-info-container">
+                      <img
+                          src="./assets/email.png"
+                          alt="Email icon"
+                          class="icon contact-icon email-icon"
+                          
+                      />
+                      <p><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">ferreiro.nico1@gmail.com</a></p>
+                  </div>
+                  <div class="contact-info-container">
+                      <img
+                          src="./assets/linkedin.png"
+                          alt="LinkedIn icon"
+                          class="icon contact-icon1"
+                      />
+                      <p><a href="https://www.linkedin.com/in/nicol%C3%A1s-ferreiro-b3703a293/">LinkedIn</a></p>
+                  </div>
+              </div>
+          </section>
+
+          <form action="https://formspree.io/f/mzbloadr" method="post" class="center-form" id="miFormulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+        
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        
+            <button type="submit">Enviar</button>
+        
+            <!-- Mensaje de éxito (inicialmente oculto) -->
+            <div id="success-message" style="display: none; color: green;">
+              ¡El formulario se envió con éxito!
+            </div>
+          </form>
+          <div id="error"></div>
       </div>
-    </section>
+  </section>
+  
+    
     <footer>
       <nav>
         <div class="nav-links-container">

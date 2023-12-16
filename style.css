@@ -242,6 +242,10 @@ section {
   border: rgb(53, 53, 53) 0.1rem solid;
 }
 
+.btn-color-2{
+  color: black;
+}
+
 .btn-color-1:hover,
 .btn-color-2:hover {
   cursor: pointer;
@@ -394,11 +398,28 @@ article .icon {
 
 /* CONTACT */
 
-#contact {
+/* Estilos generales aquí */
+
+.main-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: stretch;
+  height: 40vh;
+  margin-top: 200px;
+}
+
+form {
+  flex: 1; /* Toma el espacio disponible en pantallas grandes */
+  box-sizing: border-box;
+  margin-left: 100px; /* Espacio entre el formulario y la sección de contacto en pantallas grandes */
+}
+
+#contact {
+  flex: 1; /* Toma el espacio disponible en pantallas grandes */
+  display: flex;
   flex-direction: column;
-  height: 70vh;
+  height: 100%;
+  margin: 0;
 }
 
 .contact-info-upper-container {
@@ -408,37 +429,166 @@ article .icon {
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   background: (250, 250, 250);
-  margin: 2rem auto;
+  margin: 2rem 0; /* Margen superior e inferior en pantallas pequeñas */
   padding: 0.5rem;
 }
 
 .contact-info-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
   margin: 1rem;
 }
 
+
 .contact-info-container p {
   font-size: larger;
 }
-
 .contact-icon {
   cursor: default;
+}
+.contact-icon1{
+  cursor: default;
+  margin-top: 7px;
 }
 
 .email-icon {
   height: 2.5rem;
 }
 
+/* Media query para hacer el diseño más responsivo */
+
+@media screen and (max-width: 600px) {
+  .main-container {
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+  }
+
+  form {
+      width: 100%; /* Hace que el formulario ocupe el ancho completo en pantallas pequeñas */
+      max-width: none; /* Elimina el máximo ancho del formulario */
+      margin-left: 0;
+      margin-bottom: 100px; /* Ajusta según tus necesidades */
+  }
+
+  #contact {
+      max-width: 100%; /* Ajusta el ancho máximo de la sección de contacto en pantallas pequeñas */
+      margin-left: 0;
+  }
+  .contact-info-upper-container {
+        flex-direction: column; /* Apila los elementos uno encima del otro en pantallas pequeñas */
+        align-items: center;
+        gap: 10px;
+    }
+
+  .contact-info-container {
+        margin: 20px 0; /* Espaciado entre los elementos en pantallas pequeñas */
+  }
+}
+
 /* FOOTER SECTION */
 
 footer {
+
   height: 26vh;
   margin: 0 1rem;
 }
 
 footer p {
   text-align: center;
+}
+
+/* Agrega estos estilos al final de tu archivo CSS */
+.dark-mode {
+  background-color: #1d1c1c; /* Color de fondo oscuro */
+  color: #ffffff; /* Color de texto claro */
+}
+
+.dark-mode a {
+  color: #bb86fc; /* Color de enlace claro en modo oscuro */
+}
+
+.dark-mode footer {
+  background-color: #1a1a1a; /* Color de fondo oscuro para el pie de página */
+  color: #ffffff; /* Color de texto claro para el pie de página */
+}
+
+.dark-mode p {
+  color: #c5c5c5;
+}
+
+.dark-mode .details-container p {
+  color: black;
+}
+
+.dark-mode #dark-mode-toggle {
+  color: #bb86fc;
+}
+
+.dark-mode .btn-color-2{
+  color: #5e2a9e;
+  background-color: #ffffff;
+}
+
+.dark-mode .btn-color-1{
+  color: #ffffff;
+  background-color: #5e2a9e;
+}
+
+.dark-mode .btn-color-2:hover{
+  color: #ffffff;
+  background-color: #5e2a9e;
+}
+
+.dark-mode .btn-color-1:hover{
+  color: #5e2a9e;
+  background-color: #ffffff;
+}
+
+.dark-mode #socials-container img {
+  border-radius: 4px solid white; /* Asegura que el borde de los iconos sea blanco */
+  filter: brightness(0) invert(1); /* Invierte los colores para hacer los iconos blancos */
+}
+
+.dark-mode .hamburger-icon span {
+  background-color: white; /* Fondo blanco para los elementos del icono de hamburguesa */
+}
+
+.dark-mode .article-container h3{
+  color: #5e2a9e;
+}
+
+.dark-mode .contact-info-container img{
+  border-radius: 4px solid white; /* Asegura que el borde de los iconos sea blanco */
+  filter: brightness(0) invert(1); /* Invierte los colores para hacer los iconos blancos */
+}
+
+.dark-mode .arrow {
+  border-radius: 4px solid white; /* Asegura que el borde de los iconos sea blanco */
+  filter: brightness(0) invert(1); 
+}
+
+.dark-mode form {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+.success-message{
+  display: none;
+}
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #000000;
+}
+
+#dark-mode-toggle:hover {
+  color: #5e2a9e;
+}
+
+.dark-mode a:hover {
+  color: #5e2a9e;
 }

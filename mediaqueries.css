@@ -52,6 +52,9 @@
   footer {
     height: 40vh;
   }
+  #contact {
+    margin-bottom: 100px;
+  }
   #profile {
     height: 83vh;
     margin-bottom: 0;
