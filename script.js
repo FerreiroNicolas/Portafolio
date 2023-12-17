@@ -17,20 +17,38 @@ var typed = new Typed(".multiple-text", {
 
 // MODO OSCURO
 // Función para cambiar entre el modo oscuro y claro
+
 function toggleDarkMode() {
   const icon = document.querySelector('.dark-mode-icon');
 
   // Verifica la clase actual del icono
   if (icon.classList.contains('fa-moon')) {
-    // Cambia al modo claro
-    document.body.classList.remove('dark-mode');
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
+      // Cambia al modo claro
+      document.body.classList.remove('dark-mode');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
   } else {
-    // Cambia al modo oscuro
-    document.body.classList.add('dark-mode');
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
+      // Cambia al modo oscuro
+      document.body.classList.add('dark-mode');
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+  }
+}
+
+function toggleDarkModeHamburger() {
+  const icon = document.querySelector('#dark-mode-toggle-hamburger .dark-mode-icon');
+
+  // Verifica la clase actual del icono
+  if (icon.classList.contains('fa-moon')) {
+      // Cambia al modo claro
+      document.body.classList.remove('dark-mode');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+  } else {
+      // Cambia al modo oscuro
+      document.body.classList.add('dark-mode');
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
   }
 }
 

@@ -592,3 +592,36 @@ footer p {
 .dark-mode a:hover {
   color: #5e2a9e;
 }
+
+@media screen and (max-width: 600px) {
+  /* Estilos específicos para móviles */
+  .dark-mode #dark-mode-toggle-hamburger {
+      color: #5e2a9e;
+
+  }
+
+  
+}
+
+/* Estilos generales aquí */
+
+/* Estilos para pantallas más pequeñas (móviles) */
+@media screen and (max-width: 600px) {
+  /* Estilos específicos para móviles */
+  #hamburger-nav{
+    text-align: center;
+  }
+
+  .dark-mode #hamburger-nav{
+    text-align: center;
+
+  }
+
+
+  #dark-mode-toggle-hamburger .dark-mode-icon {
+      font-size: 24px; /* Ajusta el tamaño del icono según tus necesidades */
+  }
+}
+
+/* Resto de los estilos generales para pantallas más grandes (escritorio) */
+/* ... */
