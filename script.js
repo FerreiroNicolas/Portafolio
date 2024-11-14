@@ -8,7 +8,7 @@ function toggleMenu() {
 }
 
 var typed = new Typed(".multiple-text", {
-  strings: ["Frontend Developer", "Estudiante ing. informática"],
+  strings: ["Trainee", "Estudiante ing. informática"],
   typeSpeed: 100,
   backSpeed: 100,
   backDelay: 1000,
